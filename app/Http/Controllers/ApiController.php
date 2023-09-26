@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 
 class ApiController extends Controller
@@ -73,5 +74,12 @@ class ApiController extends Controller
         $response['user'] = $data;
 
         return response()->json($response, 200);
+    }
+
+
+    public function mockApi()
+    {
+        $response = Http::get('https://64a6189d00c3559aa9c057fa.mockapi.io/user');
+        return $response;
     }
 }

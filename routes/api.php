@@ -23,3 +23,6 @@ Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
 //for secure reason
 Route::get('/detail', [ApiController::class, 'detail'])->middleware('auth:sanctum');
+
+
+Route::get('/user-data', [ApiController::class, 'mockApi']);
